@@ -5,6 +5,9 @@ list: .space 11 #can store 10 characters into a string named "list"
 .text
 .globl main
 
-#git add .
-#git commit -m "description"
-#git push
+main:
+  li $v0, 8 #reads strings into list string
+  la $a0, list
+  li $a1, 10 #input no more than 10 characters
+  syscall
+  move $t1, $a0
