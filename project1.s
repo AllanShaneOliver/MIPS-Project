@@ -20,3 +20,13 @@ li $t6, 'A' #character A - lower boundary for base 29
 li $t7, 'S' #character S - upper boundary for base 29
 li $s3, 0 #result variable
 li $s4, 0 #variable kept at 0
+
+begin:
+  li $t2, 0 #$i=0;
+  li $s5, 10 #exit condition - exit loop if at 10th character
+
+loop:
+    beq $s5, $t2, afterloop #or use exit if not working
+    addi $t2, $t2, 1 #add 1 after each iteration, i++;
+    lb $t0, 0($t1) #loads byte of user input into $t0
+    addi $t1, $t1, 1
