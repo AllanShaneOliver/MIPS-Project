@@ -35,3 +35,10 @@ L1: blt $t0, $s1, L2 #test the next condition if this falls through
     bgt $t0, $s2, L2 #move to L2 if this isn't true
     addi $s3, $t0, -48 #subtract 48, place result into $s3
     j FN
+
+L2: blt $t0, $t4, L3 #test the next condition if this falls through
+    bgt $t0, $t5, L3 #move to L3 if this isn't true
+    addi $s3, $t0, -87 #subtract 87, place result into $s3
+    j FN
+
+
