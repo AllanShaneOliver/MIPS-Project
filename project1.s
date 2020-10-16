@@ -30,3 +30,8 @@ loop:
     addi $t2, $t2, 1 #add 1 after each iteration, i++;
     lb $t0, 0($t1) #loads byte of user input into $t0
     addi $t1, $t1, 1
+
+L1: blt $t0, $s1, L2 #test the next condition if this falls through
+    bgt $t0, $s2, L2 #move to L2 if this isn't true
+    addi $s3, $t0, -48 #subtract 48, place result into $s3
+    j FN
