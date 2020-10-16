@@ -48,3 +48,13 @@ L3: blt $t0, $t6, EL #test the next condition if this falls through
 
 EL: move $s3, $s4
 FN: j loop
+
+afterloop:
+  add $v0, $s3, $zero #copy sum into register $v0
+  li $v0, 1
+  move $a0, $s3
+  syscall
+
+exit:
+  jr $ra #exit program
+
