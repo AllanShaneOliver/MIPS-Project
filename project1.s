@@ -45,3 +45,6 @@ L3: blt $t0, $t6, EL #test the next condition if this falls through
     bgt $t0, $t7, EL #move to ELSE if this isn't true
     addi $s3, $t0, -55 #subtract 55, place result into $s3
     j FN
+
+EL: move $s3, $s4
+FN: j loop
